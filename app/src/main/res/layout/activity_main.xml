@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/llMain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtRadiusSelector"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="@dimen/padding_double_standard"
+            android:text="Radius Selector"
+            android:textColor="@color/black"
+            android:textSize="@dimen/dp15"
+            android:textStyle="bold"></androidx.appcompat.widget.AppCompatTextView>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtRadius"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/txtRadiusSelector"
+            android:layout_weight="1"
+            android:gravity="end|center"
+            android:padding="@dimen/padding_double_standard"
+            android:text="1 KM"
+            android:textColor="@color/black"
+            android:textSize="@dimen/dp15"></androidx.appcompat.widget.AppCompatTextView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llSlider"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp50"
+        android:layout_below="@+id/llMain"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatSeekBar
+            android:id="@+id/seekbar_Radius"
+            style="@style/MySeekBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/dp10"
+            android:thumb="@drawable/seek_thumb"></androidx.appcompat.widget.AppCompatSeekBar>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llLimit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/llSlider"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="@dimen/dp5"
+            android:text="100 M"
+            android:textColor="@color/black"></androidx.appcompat.widget.AppCompatTextView>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|end"
+            android:layout_weight="1"
+            android:gravity="end"
+            android:padding="@dimen/dp5"
+            android:text="5 KM"
+            android:textColor="@color/black"></androidx.appcompat.widget.AppCompatTextView>
+    </LinearLayout>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/llLimit"
+        android:padding="@dimen/dp5">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rest_Recycler"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/dp5"
+            tools:listitem="@layout/list_restaurants"></androidx.recyclerview.widget.RecyclerView>
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+</RelativeLayout>
+</layout>

@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">RestaurantFinder</string>
+    <string name="currently_closed">Currently CLOSED</string>
+    <string name="currently_open">Currently OPEN</string>
+</resources>
